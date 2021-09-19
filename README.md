@@ -1,0 +1,1 @@
+# edu_task_django
