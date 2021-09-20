@@ -1,4 +1,6 @@
 # edu_task_django
+<!-- Install requirements -->
+pip install -r requirements.txt
 
 <!-- Run server -->
 python manage.py runserver
