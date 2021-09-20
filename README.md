@@ -1,26 +1,26 @@
 # edu_task_django
-<!-- Install requirements -->
+## Install requirements
 pip install -r requirements.txt
 
-<!-- Run server -->
+##  Run server -->
 python manage.py runserver
 
-<!-- Make migration on changes you make to your models (adding a field, deleting a model, etc.) into your database schema. -->
+##  Make migration on changes you make to your models (adding a field, deleting a model, etc.) into your database schema. -->
 python manage.py makemigrations
 
-<!-- sync your database for the first time -->
+##  sync your database for the first time -->
 python manage.py migrate
 
-<!-- We'll authenticate as that user later in our example. -->
+##  We'll authenticate as that user later in our example. -->
 python manage.py createsuperuser --email admin@example.com --username admin
 admin/admin
 
-<!-- Admin -->
+##  Admin -->
 ## View all info..
 http://127.0.01:8000/admin/
 
 
-<!-- Created Register and login apis -->
+##  Created Register and login apis -->
 http://127.0.01:8000/api/login/
 
 ## Eg: 
@@ -31,7 +31,7 @@ http://127.0.01:8000/api/login/
     "password2":"1234"
 }
 
-<!-- Login user to get access token. Valid for 24 hours only.-->
+##  Login user to get access token. Valid for 24 hours only.-->
 http://127.0.01:8000/api/login/
 
 ## Eg:
@@ -41,13 +41,13 @@ http://127.0.01:8000/api/login/
 }
 
 
-<!-- Course Post (Auth must required: Brearer Token: access token)--> 
+##  Course Post (Auth must required: Brearer Token: access token)--> 
 http://127.0.01:8000/api/courselists/
 
 ## Eg.:
     {"title": "angular"}
 
-<!-- Section Post (Auth must required: Brearer Token: access token)-->
+##  Section Post (Auth must required: Brearer Token: access token)-->
 http://127.0.01:8000/api/sectionlists/
 
 ## Eg.:  'course' is the id of Course api item.
@@ -58,7 +58,7 @@ http://127.0.01:8000/api/sectionlists/
 }
 
 
-<!-- Lecture Post -->
+##  Lecture Post -->
 http://127.0.01:8000/api/lecturelists/
 ## (Auth must required)
 headers = {"Authorization": "Bearer  <access token>"}
@@ -69,7 +69,7 @@ headers = {"Authorization": "Bearer  <access token>"}
 }
 
 
-<!-- Lecture Get -->
+##  Lecture Get -->
 http://127.0.01:8000/api/lecturelist/<pk>
 ## (Auth must required)
 headers = {"Authorization": "Bearer  <access token>"}
@@ -77,7 +77,7 @@ headers = {"Authorization": "Bearer  <access token>"}
 http://127.0.01:8000/api/lecturelist/11
 
 
-<!-- Lecture Put -->
+##  Lecture Put -->
 http://127.0.01:8000/api/lecturelist/<pk>
 ## (Auth must required)
 headers = {"Authorization": "Bearer  <access token>"}
@@ -88,7 +88,7 @@ http://127.0.01:8000/api/lecturelist/11
     "section": 4
 }
 
-<!-- Lecture Delete -->
+##  Lecture Delete -->
 http://127.0.01:8000/api/lecturelist/<pk>
 ## (Auth must required)
 headers = {"Authorization": "Bearer  <access token>"}
@@ -103,7 +103,7 @@ http://127.0.01:8000/api/lecturelist/11
 
 ## References:
 
-<!-- Navigate to ORM for make obj relation in serializers.py-->
+##  Navigate to ORM for make obj relation in serializers.py-->
 cd tutorials
 python manage.py shell
     from core.models import CourseList, SectionList, LectureList
@@ -117,11 +117,11 @@ python manage.py shell
     cl = LectureList.objects.all()
     dir(cl[0])
 
-<!-- Create project -->
+##  Create project -->
 django-admin startproject tutorials
 
-<!-- create core app -->
+##  create core app -->
 cd tutorials && python manage.py startapp core
 
-<!-- create auth app -->
+##  create auth app -->
 python manage.py startapp accounts
