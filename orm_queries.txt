@@ -1,7 +1,7 @@
 Commands:
 
 # <!-- Navigate to ORM for make obj relation in serializers.py-->
-cd checklist
+
 python manage.py shell
 
 from core.models import CourseList, SectionList, LectureList
