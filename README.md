@@ -1,5 +1,8 @@
 # edu_task_django
 
+<!-- Install requirements -->
+pip install -r requirements.txt
+
 <!-- Run server -->
 python manage.py runserver
 
@@ -11,7 +14,9 @@ python manage.py migrate
 
 <!-- We'll authenticate as that user later in our example. -->
 python manage.py createsuperuser --email admin@example.com --username admin
+
 admin/admin
+
 
 <!-- Admin -->
 ## View all info..
