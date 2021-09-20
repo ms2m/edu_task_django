@@ -41,5 +41,19 @@ Eg:
     "password": "1234"
 }
 
+<!-- Navigate to ORM -->
+cd checklist
+python manage.py shell
+    from core.models import CourseList, SectionList, LectureList
+
+## cl[0].checklistitem_set # created by django by reverse traverse
+cl = SectionList.objects.all()
+dir(cl[0])
+
+cl = CourseList.objects.all()
+dir(cl[0])
+
+cl = LectureList.objects.all()
+dir(cl[0])
 
 
