@@ -1,12 +1,8 @@
 from rest_framework import serializers
-# from core.models import CheckList, CheckListItem
 from core.models import CourseList, SectionList, LectureList
 
 
-
-
 class LectureListSeralizer(serializers.ModelSerializer):
-    # items = SectionListSeralizer(source='sectionlist_set', many=True, read_only=True)
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
     class Meta:
         model = LectureList

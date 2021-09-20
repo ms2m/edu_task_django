@@ -1,0 +1,34 @@
+Commands:
+
+# <!-- Navigate to ORM for make obj relation in serializers.py-->
+cd checklist
+python manage.py shell
+
+from core.models import CourseList, SectionList, LectureList
+
+## 1. Find all the lectures that belong to a given course say 'Flask'.
+course_obj = CourseList.objects.get(title='Flask')
+section_obj = SectionList.objects.filter(course=course_obj.id)
+## fetching all sections id
+data = [data.id for data in section_obj]
+lecture_obj = LectureList.objects.filter(section__in=tuple(data))
+
+
+## 2.  Which course has a given Section with title 'Set-up'
+section_obj = SectionList.objects.filter(title='Set-up')
+# section_obj = SectionList.objects.filter(title='Set-up angular')
+data = [data.course for data in section_obj]
+course_obj = CourseList.objects.filter(title__in=tuple(data))
+
+
+
+
+
+## 3.  Which course has no lecture containing keyword 'design'
+from django.db.models import Q
+data_obj = CourseList.objects.exclude(Q(title__contains='design'))
+# data_obj = LectureList.objects.exclude(Q(title__contains='windows'))
+data = [data.section for data in data_obj]
+section_obj = SectionList.objects.filter(title__in=tuple(data))
+sec_data = [data.course for data in section_obj]
+course_obj = CourseList.objects.filter(title__in=tuple(sec_data))
